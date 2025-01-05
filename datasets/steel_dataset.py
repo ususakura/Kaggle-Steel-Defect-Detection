@@ -11,7 +11,6 @@ import torch
 from torch.utils.data import DataLoader, Dataset, sampler
 from torch.utils.data.dataloader import default_collate
 from torchvision import transforms
-from albumentations.pytorch import ToTensor
 import sys
 
 sys.path.append('.')
