@@ -130,7 +130,7 @@ def augmentation(image, mask, crop=False, height=None, width=None):
     return image_aug, mask_aug
 
 
-def get_transforms(phase, image, mask, mean, std, crop=False, height=None, width=None):
+def get_transforms(phase, image, mask, mean, std, crop=False, height=1600, width=256):
 
     if phase == 'train':
         image, mask = augmentation(image, mask, crop=crop, height=height, width=width)
