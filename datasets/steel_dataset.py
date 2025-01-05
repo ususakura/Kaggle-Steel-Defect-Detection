@@ -41,6 +41,17 @@ class SteelDataset(Dataset):
         img = cv2.imread(image_path)
         img, mask = self.transforms(self.phase, img, mask, self.mean, self.std, crop=self.crop, height=self.height, width=self.width)
         mask = mask.permute(2, 0, 1)
+          # === 在这里插入调试打印 ===
+    if img is None:
+        print(f"[DEBUG] image is None for path: {img_path}")
+    else:
+        print(f"[DEBUG] Successfully read image from {img_path}, shape = {img.shape}")
+
+    if mask is None:
+        print(f"[DEBUG] mask is None for path: {mask_path}")
+    else:
+        print(f"[DEBUG] Successfully read mask from {mask_path}, shape = {mask.shape}")
+
         return img, mask
 
     def __len__(self):
